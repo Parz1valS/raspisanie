@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 const App = () => {
-    let [data, setData] = useState([])
+    const [data, setData] = useState([])
 
     const fetchData = () => {
         fetch("1(2).json")
@@ -15,11 +15,11 @@ const App = () => {
     useEffect(() => {
         fetchData()
     }, [])
-   // console.log(data)
+   //console.log(data)
     return (
         <div>
-                {data.map(row => (
-                    data={row}
+                {data.map(weeks => (
+                    <li key={weeks.week_num}>data={weeks}</li>
                 ))}
         </div>
     );
